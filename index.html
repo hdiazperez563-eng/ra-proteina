@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es-MX">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>RA — Estructura de proteínas e Inteligencia Artificial</title>
+  <link rel="stylesheet" href="./css/estilos.css">
+
+  <script type="importmap">
+  {
+    "imports": {
+      "three": "./js/vendor/three.module.js",
+      "three/addons/": "./js/vendor/addons/"
+    }
+  }
+  </script>
+</head>
+<body>
+
+  <!-- ============ PANTALLA DE INICIO ============ -->
+  <div id="pantallaInicio">
+    <div class="tarjeta">
+      <div class="etiqueta">Realidad Aumentada</div>
+      <h1>Estructura de proteínas<br>e Inteligencia Artificial</h1>
+      <p class="lead">
+        Apunta la cámara a los marcadores impresos y explora los cuatro niveles
+        de organización de una proteína en 3D.
+      </p>
+
+      <button id="btnIniciar" class="principal">Iniciar Realidad Aumentada</button>
+      <button id="btnLeer" class="secundario">Explorar contenido</button>
+      <button id="btnSoloModelo" class="terciario">Ver modelo 3D sin cámara</button>
+
+      <p class="nota">
+        Android (Chrome) y iPhone (Safari). Requiere permiso de cámara.
+      </p>
+    </div>
+  </div>
+
+  <!-- ============ VISTA 3D / CÁMARA ============ -->
+  <div id="contenedorAR"></div>
+
+  <!-- ============ CAPA SUPERPUESTA DE LA RA ============ -->
+  <div id="hud" class="oculto">
+    <div id="mensaje">Buscando marcador…</div>
+
+    <div id="panelInfo" class="oculto">
+      <div class="asa"></div>
+      <h3 id="infoTitulo"></h3>
+      <p id="infoSubtitulo"></p>
+      <ul id="infoPuntos"></ul>
+      <button id="btnSaberMas" class="mini">Saber más sobre esto</button>
+    </div>
+
+    <button id="btnSalir">Salir</button>
+  </div>
+
+  <!-- ============ LECTOR DE CONTENIDO ============ -->
+  <div id="lector" class="oculto">
+    <header id="lectorBarra">
+      <button id="btnCerrarLector" aria-label="Cerrar">&#10005;</button>
+      <span>Inteligencia Artificial en Biotecnología</span>
+    </header>
+    <nav id="lectorNav"></nav>
+    <main id="lectorContenido"></main>
+  </div>
+
+  <!-- ============ CARGANDO ============ -->
+  <div id="cargando" class="oculto">
+    <div class="spinner"></div>
+    <span id="cargandoTexto">Cargando modelo 3D…</span>
+  </div>
+
+  <script type="module" src="./js/app.js"></script>
+</body>
+</html>
